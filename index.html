@@ -4,227 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramp Solutions | Soluciones Integrales</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
-        :root {
-            --primary: #0A192F;
-            --secondary: #00B4D8;
-            --text-dark: #2B2D42;
-            --text-light: #8D99AE;
-            --bg-light: #F8F9FA;
-            --white: #FFFFFF;
-            --card-border: transparent;
-        }
-
+        :root { --primary: #0A192F; --secondary: #00B4D8; --text-dark: #2B2D42; --text-light: #8D99AE; --bg-light: #F8F9FA; --white: #FFFFFF; }
+        
+        /* Modo Oscuro Robusto */
         @media (prefers-color-scheme: dark) {
-            :root {
-                --primary: #FFFFFF;
-                --secondary: #00B4D8;
-                --text-dark: #E0E1E6;
-                --text-light: #A0AABF;
-                --bg-light: #0B192C;
-                --white: #06101E;
-                --card-border: #1A2C42;
-            }
+            :root { --primary: #FFFFFF; --text-dark: #E0E1E6; --bg-light: #0B192C; --white: #06101E; }
             header { background-color: rgba(6, 16, 30, 0.95) !important; }
-            .btn-nav { color: #06101E !important; background-color: var(--secondary) !important; }
-            .bot-window { border: 1px solid var(--secondary) !important; box-shadow: 0 5px 25px rgba(0, 180, 216, 0.25) !important; }
-            .bot-header { background-color: #0A192F !important; color: #FFFFFF !important; border-bottom: 2px solid var(--secondary); }
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        body { color: var(--text-dark); background-color: var(--white); line-height: 1.6; transition: all 0.3s ease; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { color: var(--text-dark); background-color: var(--white); line-height: 1.6; }
 
-        header { background-color: var(--white); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
-        .logo { font-size: 26px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
-        .logo span { color: var(--secondary); }
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 15px; transition: color 0.3s ease; }
-        .nav-links a:hover { color: var(--secondary); }
-        .btn-nav { background-color: var(--primary); color: var(--white) !important; padding: 10px 25px; border-radius: 5px; transition: background 0.3s ease !important; }
-        .lang-btn { cursor: pointer; font-weight: 700; color: var(--secondary); background: none; border: 1px solid var(--secondary); padding: 5px 10px; border-radius: 5px; transition: all 0.3s ease; }
-        .lang-btn:hover { background: var(--secondary); color: var(--white); }
-
-        .hero { height: 100vh; background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; margin-top: 50px; }
-        .hero h1 { color: #FFFFFF; font-size: 4rem; max-width: 900px; line-height: 1.2; margin-bottom: 20px; }
-        .hero p { color: #E0E1E6; font-size: 1.3rem; max-width: 700px; margin-bottom: 40px; }
-        .btn-primary { background-color: var(--secondary); color: #0A192F; padding: 15px 40px; font-size: 18px; font-weight: 700; text-decoration: none; border-radius: 5px; box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4); transition: all 0.3s ease; display: inline-block; }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0, 180, 216, 0.6); background-color: #FFFFFF; }
-
-        .section-title { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
-        .section-subtitle { color: var(--secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 50px; display: block; }
-        .about { padding: 100px 5%; text-align: center; }
-        .about p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: var(--text-light); }
-        .services { padding: 100px 5%; background-color: var(--bg-light); text-align: center; }
+        /* Estructura Profesional */
+        header { background: var(--white); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .hero { height: 90vh; background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px; }
-        .card { background-color: var(--white); border: 1px solid var(--card-border); padding: 40px 30px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: all 0.4s ease; border-bottom: 4px solid transparent; }
-        .card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--secondary); }
-        .card i { font-size: 40px; color: var(--secondary); margin-bottom: 20px; transition: transform 0.3s ease; }
-        .card:hover i { transform: scale(1.1); }
-        .card h3 { font-size: 1.4rem; color: var(--primary); margin-bottom: 15px; }
+        .section-title { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 80px 5%; }
+        
+        /* Tarjetas con efecto premium */
+        .card { background: var(--bg-light); padding: 40px; border-radius: 15px; text-align: center; transition: 0.3s; border: 1px solid transparent; }
+        .card:hover { transform: translateY(-10px); border: 1px solid var(--secondary); }
+        
+        /* Botones de Acción (CTA) */
+        .btn-cta { background: var(--secondary); color: var(--primary); padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 700; margin: 10px; display: inline-block; transition: 0.3s; }
+        .btn-cta:hover { background: var(--primary); color: white; }
 
-        .contact { padding: 100px 5%; display: flex; flex-wrap: wrap; gap: 50px; justify-content: center; }
-        .contact-info { flex: 1; min-width: 300px; max-width: 500px; }
-        .info-item { display: flex; align-items: center; margin-bottom: 15px; }
-        .info-item i { font-size: 20px; color: var(--secondary); margin-right: 15px; background: var(--bg-light); padding: 12px; border-radius: 50%; }
+        /* Estilos de Formulario */
+        .form-container { max-width: 600px; margin: 0 auto; background: var(--bg-light); padding: 40px; border-radius: 15px; }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid var(--text-light); border-radius: 8px; }
         
-        .contact-form { flex: 1; min-width: 300px; max-width: 600px; background: var(--bg-light); padding: 40px; border-radius: 10px; border: 1px solid var(--card-border); }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid var(--text-light); border-radius: 5px; background: var(--white); color: var(--text-dark); font-size: 16px; outline: none; }
-        .contact-form textarea { height: 150px; resize: none; }
-        .btn-submit { width: 100%; background: var(--secondary); color: #0A192F; padding: 15px; border: none; font-size: 18px; font-weight: 700; border-radius: 5px; cursor: pointer; transition: background 0.3s ease; }
-        
-        .bot-btn { position: fixed; bottom: 30px; right: 30px; background-color: var(--secondary); color: var(--primary); border: none; border-radius: 50%; width: 65px; height: 65px; display: flex; justify-content: center; align-items: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; cursor: pointer; transition: transform 0.3s ease; }
-        .bot-btn:hover { transform: scale(1.1); background-color: var(--white); }
-        
-        .bot-window { position: fixed; bottom: 105px; right: 30px; width: 320px; background: var(--white); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 1000; display: none; overflow: hidden; border: 1px solid var(--card-border); animation: fadeInUp 0.3s ease; }
-        .bot-header { background: var(--primary); color: var(--white); padding: 15px 20px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--secondary); }
-        .close-bot { cursor: pointer; font-size: 24px; line-height: 1; }
-        .bot-body { padding: 20px; background: var(--white); }
-        .bot-msg { background: var(--bg-light); padding: 12px 15px; border-radius: 15px 15px 15px 0; margin-bottom: 15px; font-size: 0.95rem; color: var(--text-dark); border: 1px solid var(--card-border); display: flex; gap: 10px; }
-        .bot-msg i { color: var(--secondary); font-size: 20px; }
-        .bot-option { display: block; background: #25D366; color: white; text-decoration: none; padding: 12px; border-radius: 8px; margin-top: 10px; text-align: center; font-weight: 600; font-size: 0.95rem; transition: background 0.3s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .bot-option:hover { background: #1ebe57; }
-
-        footer { background-color: #0A192F; color: #FFF; text-align: center; padding: 30px 20px; border-top: 5px solid var(--secondary); }
-        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2.5rem; } .bot-window { width: 90%; right: 5%; bottom: 100px; } }
+        /* Asistente */
+        .bot-btn { position: fixed; bottom: 30px; right: 30px; background: var(--secondary); width: 65px; height: 65px; border-radius: 50%; font-size: 25px; border: none; cursor: pointer; color: var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; }
+        .bot-window { position: fixed; bottom: 110px; right: 30px; width: 300px; background: white; border-radius: 15px; display: none; box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 1000; padding: 20px; color: black; }
+        .bot-option { display: block; padding: 10px; background: #25D366; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; text-align: center; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Ramp<span>Solutions</span></div>
-        <nav class="nav-links">
-            <a href="#inicio" class="t-nav-1">Inicio</a>
-            <a href="#nosotros" class="t-nav-2">Nosotros</a>
-            <a href="#servicios" class="t-nav-3">Servicios</a>
-            <button class="lang-btn" onclick="toggleLang()">EN / ES</button>
-            <a href="#contacto" class="btn-nav t-nav-4">Contactar</a>
-        </nav>
+        <div style="font-size: 24px; font-weight: 700;">RAMP<span style="color:var(--secondary)">SOLUTIONS</span></div>
+        <nav><a href="#contacto" class="btn-nav" style="padding:10px 20px; background:var(--primary); color:white; text-decoration:none; border-radius:5px;">Contactar</a></nav>
     </header>
 
-    <section id="inicio" class="hero">
-        <h1 class="t-hero-title">Conectamos tecnología, negocios y oportunidades.</h1>
-        <p class="t-hero-sub">Impulsamos el crecimiento de su empresa con soluciones integrales y estrategias de mercado altamente escalables.</p>
-        <a href="#servicios" class="btn-primary t-hero-btn">Descubra cómo</a>
+    <section class="hero">
+        <h1>Conectamos tecnología, negocios y oportunidades.</h1>
+        <p>Impulsamos su crecimiento con soluciones estratégicas de clase mundial.</p>
     </section>
 
-    <section id="nosotros" class="about">
-        <span class="section-subtitle t-about-sub">Nuestra Visión</span>
-        <h2 class="section-title t-about-title">Aliados estratégicos para su expansión</h2>
-        <p class="t-about-text">En Ramp Solutions proyectamos una imagen sólida y moderna. Somos el puente que su empresa necesita para dominar el mercado centroamericano.</p>
-    </section>
-
-    <section id="servicios" class="services">
-        <span class="section-subtitle t-serv-sub">Especialidades</span>
-        <h2 class="section-title t-serv-title">Nuestras Áreas de Negocio</h2>
+    <!-- DIFERENCIACIÓN -->
+    <section style="padding: 80px 5%; background: var(--bg-light);">
+        <h2 class="section-title" style="text-align:center;">¿Por qué Ramp Solutions?</h2>
         <div class="grid">
-            <div class="card"><i class="fa-solid fa-shield-halved"></i><h3 class="t-s1-title">Seguridad Electrónica</h3><p class="t-s1-text">Sistemas de control de acceso y seguridad electrónica de última generación.</p></div>
-            <div class="card"><i class="fa-solid fa-chart-line"></i><h3 class="t-s2-title">Desarrollo Comercial</h3><p class="t-s2-text">Métricas precisas para la captación y fidelización de clientes potenciales.</p></div>
-            <div class="card"><i class="fa-solid fa-copyright"></i><h3 class="t-s3-title">Representación de Marcas</h3><p class="t-s3-text">Posicionamiento élite bajo los más estrictos estándares de calidad.</p></div>
-            <div class="card"><i class="fa-solid fa-handshake"></i><h3 class="t-s4-title">Alianzas Estratégicas</h3><p class="t-s4-text">Creación de conexiones clave B2B para potenciar sus recursos operativos.</p></div>
-            <div class="card"><i class="fa-solid fa-truck-fast"></i><h3 class="t-s5-title">Alimentos y Bebidas</h3><p class="t-s5-text">Gestión de logística y distribución de productos de consumo masivo.</p></div>
-            <div class="card"><i class="fa-solid fa-spray-can-sparkles"></i><h3 class="t-s6-title">Cosméticos y Cuidado</h3><p class="t-s6-text">Distribución especializada garantizando penetración de mercado.</p></div>
+            <div class="card"><i class="fa-solid fa-earth-americas" style="font-size:40px; color:var(--secondary)"></i><h3>Presencia Regional</h3></div>
+            <div class="card"><i class="fa-solid fa-network-wired" style="font-size:40px; color:var(--secondary)"></i><h3>Red de Distribuidores</h3></div>
+            <div class="card"><i class="fa-solid fa-microchip" style="font-size:40px; color:var(--secondary)"></i><h3>Experiencia Tecnológica</h3></div>
+            <div class="card"><i class="fa-solid fa-chart-line" style="font-size:40px; color:var(--secondary)"></i><h3>Canales Comerciales</h3></div>
+            <div class="card"><i class="fa-solid fa-headset" style="font-size:40px; color:var(--secondary)"></i><h3>Soporte Local</h3></div>
         </div>
     </section>
 
-    <section id="contacto" class="contact">
-        <div class="contact-info">
-            <h2 class="t-contact-title">Hablemos de negocios</h2>
-            <p style="margin-bottom: 30px;" class="t-contact-text">Estamos listos para escalar las operaciones de su empresa. Contáctenos hoy mismo.</p>
-            
-            <div style="background: var(--bg-light); padding: 25px; border-radius: 10px; margin-bottom: 25px; border-left: 4px solid var(--secondary);">
-                <h3 style="color: var(--primary); margin-bottom: 5px;"><i class="fa-solid fa-user-tie" style="color: var(--secondary); margin-right: 10px;"></i>Don Alex M.M.</h3>
-                <p style="font-weight: 600; margin-bottom: 15px; font-size: 0.95rem;" class="t-role-1">Representante comercial</p>
-                <div class="info-item"><i class="fa-solid fa-phone"></i><span>+506 64701571</span></div>
-                <div class="info-item"><i class="fa-solid fa-envelope"></i><span>alexmenesescr1819@gmail.com</span></div>
-                <a href="https://wa.me/50664701571" target="_blank" class="btn-primary" style="background-color: #25D366; color: white; padding: 10px 20px; font-size: 15px; box-shadow: none; margin-top: 10px; display: inline-block;"><i class="fa-brands fa-whatsapp"></i> Chat con Don Alex</a>
-            </div>
-
-            <div style="background: var(--bg-light); padding: 25px; border-radius: 10px; border-left: 4px solid var(--secondary);">
-                <h3 style="color: var(--primary); margin-bottom: 5px;"><i class="fa-solid fa-user-tie" style="color: var(--secondary); margin-right: 10px;"></i>Doña Marjorie R.P.</h3>
-                <p style="font-weight: 600; margin-bottom: 15px; font-size: 0.95rem;" class="t-role-2">Coordinadora comercial</p>
-                <div class="info-item"><i class="fa-solid fa-phone"></i><span>+505 58150405</span></div>
-                <div class="info-item"><i class="fa-solid fa-envelope"></i><span>majo.rampe27@gmail.com</span></div>
-                <a href="https://wa.me/50558150405" target="_blank" class="btn-primary" style="background-color: #25D366; color: white; padding: 10px 20px; font-size: 15px; box-shadow: none; margin-top: 10px; display: inline-block;"><i class="fa-brands fa-whatsapp"></i> Chat con Doña Marjorie</a>
-            </div>
+    <!-- CONTACTO Y BOTONES -->
+    <section id="contacto" style="padding: 100px 5%;">
+        <h2 class="section-title" style="text-align:center;">Hablemos de negocios</h2>
+        <div style="text-align:center; margin-bottom: 50px;">
+            <a href="https://wa.me/50664701571" class="btn-cta">Solicitar Reunión</a>
+            <a href="tel:+50664701571" class="btn-cta" style="background: var(--primary); color:white;">Agendar Llamada</a>
+            <a href="#form-section" class="btn-cta" style="background: var(--text-light); color:white;">Obtener Propuesta</a>
         </div>
-
-        <div class="contact-form">
+        <div id="form-section" class="form-container">
             <form action="https://formsubmit.co/alexmenesescr1819@gmail.com" method="POST">
-                <input type="text" name="Nombre" placeholder="Nombre completo / Full Name" required>
-                <input type="email" name="Correo" placeholder="Correo corporativo / Corporate Email" required>
-                <input type="text" name="Asunto" placeholder="Asunto / Subject" required>
-                <textarea name="Mensaje" placeholder="Mensaje / Message..." required></textarea>
-                
-                <input type="hidden" name="_cc" value="majo.rampe27@gmail.com">
-                <!-- Redirección directa al inicio -->
+                <input type="text" name="Nombre" placeholder="Nombre completo" required>
+                <input type="email" name="Correo" placeholder="Correo electrónico" required>
+                <textarea name="Mensaje" placeholder="Detalles de su consulta" required></textarea>
                 <input type="hidden" name="_next" value="https://rampsolution.github.io/">
-                <input type="hidden" name="_captcha" value="false">
-
-                <button type="submit" class="btn-submit t-form-btn">Enviar Mensaje</button>
+                <button type="submit" class="btn-cta" style="width:100%;">Enviar Mensaje</button>
             </form>
         </div>
     </section>
 
-    <button class="bot-btn" onclick="toggleBot()"><i class="fa-solid fa-robot"></i></button>
-
-    <div class="bot-window" id="botWindow">
-        <div class="bot-header">
-            <span><i class="fa-solid fa-headset" style="margin-right: 8px;"></i> Asistente Ramp</span>
-            <span class="close-bot" onclick="toggleBot()">&times;</span>
-        </div>
-        <div class="bot-body">
-            <div class="bot-msg">
-                <i class="fa-solid fa-robot"></i>
-                <div>
-                    <strong style="display:block; margin-bottom:5px;">RampBot</strong>
-                    <span class="t-bot-msg1">¡Hola! Bienvenido a Ramp Solutions. ¿Con quién le gustaría conectarse hoy?</span>
-                </div>
-            </div>
-            <a href="https://wa.me/50664701571" class="bot-option" target="_blank"><i class="fa-brands fa-whatsapp" style="margin-right: 5px;"></i> Don Alex (Representante)</a>
-            <a href="https://wa.me/50558150405" class="bot-option" target="_blank"><i class="fa-brands fa-whatsapp" style="margin-right: 5px;"></i> Doña Marjorie (Coordinadora)</a>
-        </div>
+    <button class="bot-btn" onclick="document.getElementById('botWindow').style.display='block'"><i class="fa-solid fa-robot"></i></button>
+    <div id="botWindow" class="bot-window">
+        <strong>Asistente Ramp</strong> <span onclick="this.parentElement.style.display='none'" style="float:right; cursor:pointer;">&times;</span>
+        <a href="https://wa.me/50664701571" class="bot-option">Don Alex (Representante)</a>
+        <a href="https://wa.me/50558150405" class="bot-option">Doña Marjorie (Coordinadora)</a>
     </div>
 
-    <footer><p>&copy; 2026 Ramp Solutions. Todos los derechos reservados.</p></footer>
-
-    <script>
-        function toggleBot() {
-            var bot = document.getElementById("botWindow");
-            bot.style.display = (bot.style.display === "none" || bot.style.display === "") ? "block" : "none";
-        }
-        let isEn = false;
-        const dict = {
-            "t-nav-1": { es: "Inicio", en: "Home" }, "t-nav-2": { es: "Nosotros", en: "About Us" }, "t-nav-3": { es: "Servicios", en: "Services" }, "t-nav-4": { es: "Contactar", en: "Contact" },
-            "t-hero-title": { es: "Conectamos tecnología, negocios y oportunidades.", en: "Connecting technology, business, and opportunities." },
-            "t-hero-sub": { es: "Impulsamos el crecimiento de su empresa con soluciones integrales y estrategias de mercado altamente escalables.", en: "We drive your company's growth with comprehensive solutions and highly scalable market strategies." },
-            "t-hero-btn": { es: "Descubra cómo", en: "Discover how" },
-            "t-about-sub": { es: "Nuestra Visión", en: "Our Vision" }, "t-about-title": { es: "Aliados estratégicos para su expansión", en: "Strategic allies for your expansion" },
-            "t-about-text": { es: "En Ramp Solutions proyectamos una imagen sólida y moderna. Somos el puente que su empresa necesita para dominar el mercado centroamericano.", en: "At Ramp Solutions, we project a solid and modern image. We are the bridge your company needs to dominate the Central American market." },
-            "t-serv-sub": { es: "Especialidades", en: "Specialties" }, "t-serv-title": { es: "Nuestras Áreas de Negocio", en: "Our Business Areas" },
-            "t-s1-title": { es: "Seguridad Electrónica", en: "Electronic Security" }, "t-s1-text": { es: "Sistemas de control de acceso y seguridad electrónica de última generación.", en: "State-of-the-art access control and electronic security systems." },
-            "t-s2-title": { es: "Desarrollo Comercial", en: "Commercial Development" }, "t-s2-text": { es: "Métricas precisas para la captación y fidelización de clientes potenciales.", en: "Precise metrics for attracting and retaining potential clients." },
-            "t-s3-title": { es: "Representación de Marcas", en: "Brand Representation" }, "t-s3-text": { es: "Posicionamiento élite bajo los más estrictos estándares de calidad.", en: "Elite positioning under the strictest quality standards." },
-            "t-s4-title": { es: "Alianzas Estratégicas", en: "Strategic Alliances" }, "t-s4-text": { es: "Creación de conexiones clave B2B para potenciar sus recursos operativos.", en: "Creation of key B2B connections to boost your operational resources." },
-            "t-s5-title": { es: "Alimentos y Bebidas", en: "Food & Beverages" }, "t-s5-text": { es: "Gestión de logística y distribución de productos de consumo masivo.", en: "Logistics management and distribution of mass consumer products." },
-            "t-s6-title": { es: "Cosméticos y Cuidado", en: "Cosmetics & Care" }, "t-s6-text": { es: "Distribución especializada garantizando penetración de mercado.", en: "Specialized distribution ensuring market penetration." },
-            "t-contact-title": { es: "Hablemos de negocios", en: "Let's talk business" }, "t-contact-text": { es: "Estamos listos para escalar las operaciones de su empresa. Contáctenos hoy mismo.", en: "We are ready to scale your company's operations. Contact us today." },
-            "t-role-1": { es: "Representante comercial", en: "Commercial Representative" }, "t-role-2": { es: "Coordinadora comercial", en: "Commercial Coordinator" },
-            "t-form-btn": { es: "Enviar Mensaje", en: "Send Message" },
-            "t-bot-msg1": { es: "¡Hola! Bienvenido a Ramp Solutions. ¿Con quién le gustaría conectarse hoy?", en: "Hello! Welcome to Ramp Solutions. Who would you like to connect with today?" }
-        };
-        function toggleLang() {
-            isEn = !isEn;
-            let lang = isEn ? "en" : "es";
-            for (let className in dict) {
-                let elements = document.getElementsByClassName(className);
-                for (let i = 0; i < elements.length; i++) { elements[i].innerText = dict[className][lang]; }
-            }
-        }
-    </script>
 </body>
 </html>
