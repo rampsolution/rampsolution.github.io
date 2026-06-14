@@ -3,122 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramp Solutions | Consultoría Estratégica & Operaciones</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Ramp Solutions | Soluciones Integrales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --navy: #0A192F; --cyan: #00B4D8; --slate: #8892B0; --white: #E6F1FF; --bg: #020C1B; }
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--white); line-height: 1.8; }
+        :root { --primary: #0A192F; --secondary: #00B4D8; --text-dark: #2B2D42; --text-light: #8D99AE; --bg-light: #F8F9FA; --white: #FFFFFF; }
         
-        /* Navegación */
-        .navbar { display: flex; justify-content: space-between; padding: 25px 10%; background: rgba(2, 12, 27, 0.9); position: fixed; width: 100%; z-index: 1000; border-bottom: 1px solid #112240; }
-        .logo { font-weight: 800; font-size: 24px; color: var(--cyan); }
-        .nav-items a { text-decoration: none; color: var(--white); margin-left: 30px; font-size: 14px; font-weight: 600; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { color: var(--text-dark); background-color: var(--white); line-height: 1.6; }
 
-        /* Hero */
-        .hero { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 10%; }
-        .hero h1 { font-size: 4.5rem; margin-bottom: 20px; line-height: 1.1; }
-        .hero p { font-size: 1.2rem; color: var(--slate); max-width: 700px; margin-bottom: 40px; }
+        header { background: var(--white); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .hero { height: 90vh; background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px; }
+        
+        .section-title { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 80px 5%; }
+        
+        .card { background: var(--bg-light); padding: 40px; border-radius: 15px; text-align: center; transition: 0.3s; border: 1px solid transparent; }
+        .card:hover { transform: translateY(-10px); border: 1px solid var(--secondary); }
+        
+        .btn-cta { background: var(--secondary); color: var(--primary); padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 700; margin: 10px; display: inline-block; transition: 0.3s; }
+        .btn-cta:hover { background: var(--primary); color: white; }
 
-        /* Sección Diferenciación (Larga) */
-        .section { padding: 120px 10%; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .card { background: #112240; padding: 40px; border-radius: 20px; border: 1px solid #233554; }
-        .card h3 { margin: 20px 0; color: var(--cyan); }
-
-        /* Servicios Detallados */
-        .services-list { list-style: none; margin-top: 20px; }
-        .services-list li { margin-bottom: 15px; display: flex; align-items: center; }
-        .services-list li i { color: var(--cyan); margin-right: 15px; }
-
-        /* Formulario Profesional */
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-        .input-group { margin-bottom: 20px; }
-        input, textarea { width: 100%; padding: 20px; background: #0A192F; border: 1px solid #233554; color: white; border-radius: 10px; }
-
-        .btn { padding: 20px 40px; background: var(--cyan); border: none; color: var(--bg); font-weight: 800; border-radius: 10px; cursor: pointer; transition: 0.3s; }
-        .btn:hover { background: white; }
+        .form-container { max-width: 600px; margin: 0 auto; background: var(--bg-light); padding: 40px; border-radius: 15px; }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid var(--text-light); border-radius: 8px; }
+        
+        .bot-btn { position: fixed; bottom: 30px; right: 30px; background: var(--secondary); width: 65px; height: 65px; border-radius: 50%; font-size: 25px; border: none; cursor: pointer; color: var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.2); z-index: 1000; }
+        .bot-window { position: fixed; bottom: 110px; right: 30px; width: 300px; background: white; border-radius: 15px; display: none; box-shadow: 0 5px 20px rgba(0,0,0,0.2); z-index: 1000; padding: 20px; color: black; }
+        .bot-option { display: block; padding: 10px; background: #25D366; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; text-align: center; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">RAMP SOLUTIONS</div>
-        <div class="nav-items">
-            <a href="#diferenciacion">DIFERENCIACIÓN</a>
-            <a href="#servicios">SERVICIOS</a>
-            <a href="#contacto">CONTACTO</a>
-        </div>
-    </nav>
+    <header>
+        <div style="font-size: 24px; font-weight: 700;">RAMP<span style="color:var(--secondary)">SOLUTIONS</span></div>
+        <nav><a href="#contacto" style="padding:10px 20px; background:var(--primary); color:white; text-decoration:none; border-radius:5px;">Contactar</a></nav>
+    </header>
 
     <section class="hero">
-        <h1>Consultoría Estratégica <br><span style="color:var(--cyan)">de Alto Impacto</span></h1>
-        <p>Convertimos retos complejos en activos rentables mediante una infraestructura comercial, tecnológica y operativa diseñada para escalar en mercados globales.</p>
-        <div>
-            <a href="#contacto" class="btn">Obtener Consultoría</a>
+        <h1>Conectamos tecnología, negocios y oportunidades.</h1>
+        <p>Impulsamos su crecimiento con soluciones estratégicas de clase mundial.</p>
+    </section>
+
+    <!-- SECCIÓN DIFERENCIACIÓN -->
+    <section style="padding: 80px 5%; background: var(--bg-light);">
+        <h2 class="section-title" style="text-align:center;">¿Por qué Ramp Solutions?</h2>
+        <div class="grid">
+            <div class="card"><i class="fa-solid fa-earth-americas" style="font-size:40px; color:var(--secondary)"></i><h3>Presencia Regional</h3></div>
+            <div class="card"><i class="fa-solid fa-network-wired" style="font-size:40px; color:var(--secondary)"></i><h3>Red de Distribuidores</h3></div>
+            <div class="card"><i class="fa-solid fa-microchip" style="font-size:40px; color:var(--secondary)"></i><h3>Experiencia Tecnológica</h3></div>
+            <div class="card"><i class="fa-solid fa-chart-line" style="font-size:40px; color:var(--secondary)"></i><h3>Canales Comerciales</h3></div>
+            <div class="card"><i class="fa-solid fa-headset" style="font-size:40px; color:var(--secondary)"></i><h3>Soporte Local</h3></div>
         </div>
     </section>
 
-    <section id="diferenciacion" class="section">
-        <h2 style="font-size: 3rem; margin-bottom: 60px; text-align: center;">¿Por qué Ramp Solutions?</h2>
-        <div class="grid-3">
-            <div class="card">
-                <i class="fa-solid fa-map-location-dot" style="font-size: 50px;"></i>
-                <h3>Presencia Regional Estratégica</h3>
-                <p>Nuestra ventaja competitiva reside en el conocimiento profundo de los mercados locales fusionado con una visión internacional de negocios.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-people-arrows" style="font-size: 50px;"></i>
-                <h3>Red de Distribuidores Establecida</h3>
-                <p>No empezamos de cero. Contamos con una estructura logística y comercial ya operativa para reducir su tiempo de entrada al mercado.</p>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-server" style="font-size: 50px;"></i>
-                <h3>Tecnología de Vanguardia</h3>
-                <p>Implementamos soluciones de seguridad electrónica y automatización que blindan su operación y aumentan la eficiencia.</p>
-            </div>
+    <!-- CONTACTO Y BOTONES -->
+    <section id="contacto" style="padding: 100px 5%;">
+        <h2 class="section-title" style="text-align:center;">Hablemos de negocios</h2>
+        <div style="text-align:center; margin-bottom: 50px;">
+            <a href="https://wa.me/50664701571" class="btn-cta">Solicitar Reunión</a>
+            <a href="tel:+50664701571" class="btn-cta" style="background: var(--primary); color:white;">Agendar Llamada</a>
+            <a href="#form-section" class="btn-cta" style="background: var(--text-light); color:white;">Obtener Propuesta</a>
         </div>
-    </section>
-
-    <section id="servicios" class="section" style="background:#0A192F">
-        <div class="contact-grid">
-            <div>
-                <h2 style="font-size: 3rem;">Nuestras Líneas de Servicio</h2>
-                <p style="color: var(--slate); margin: 20px 0;">Brindamos soluciones integrales que abarcan desde el desarrollo comercial hasta el soporte técnico especializado.</p>
-                <ul class="services-list">
-                    <li><i class="fa-solid fa-check"></i> Desarrollo de canales comerciales B2B</li>
-                    <li><i class="fa-solid fa-check"></i> Consultoría en Seguridad Electrónica</li>
-                    <li><i class="fa-solid fa-check"></i> Logística de productos de consumo masivo</li>
-                    <li><i class="fa-solid fa-check"></i> Representación oficial de marcas globales</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3 style="margin-bottom: 20px;">¿Listo para escalar?</h3>
-                <p>Nuestros expertos están listos para analizar su modelo actual y proponer una hoja de ruta hacia la rentabilidad.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="section">
-        <div class="contact-grid">
-            <div>
-                <h2 style="font-size: 3rem; margin-bottom: 20px;">Iniciemos el proyecto</h2>
-                <p>Agenda una llamada exploratoria con nuestro equipo directivo.</p>
-            </div>
+        <div id="form-section" class="form-container">
             <form action="https://formsubmit.co/alexmenesescr1819@gmail.com" method="POST">
+                <input type="text" name="Nombre" placeholder="Nombre completo" required>
+                <input type="email" name="Correo" placeholder="Correo electrónico" required>
+                <textarea name="Mensaje" placeholder="Detalles de su consulta" required></textarea>
                 <input type="hidden" name="_next" value="https://rampsolution.github.io/">
-                <div class="input-group"><input type="text" name="Nombre" placeholder="Nombre completo" required></div>
-                <div class="input-group"><input type="email" name="Correo" placeholder="Correo electrónico" required></div>
-                <div class="input-group"><textarea name="Mensaje" rows="5" placeholder="¿Cómo podemos ayudarle?" required></textarea></div>
-                <button type="submit" class="btn" style="width: 100%;">Enviar Propuesta</button>
+                <button type="submit" class="btn-cta" style="width:100%;">Enviar Mensaje</button>
             </form>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; border-top: 1px solid #112240;">
-        <p>&copy; 2026 Ramp Solutions. Consultoría operativa global.</p>
-    </footer>
+    <button class="bot-btn" onclick="document.getElementById('botWindow').style.display='block'"><i class="fa-solid fa-robot"></i></button>
+    <div id="botWindow" class="bot-window">
+        <strong>Asistente Ramp</strong> <span onclick="this.parentElement.style.display='none'" style="float:right; cursor:pointer;">&times;</span>
+        <a href="https://wa.me/50664701571" class="bot-option">Don Alex (Representante)</a>
+        <a href="https://wa.me/50558150405" class="bot-option">Doña Marjorie (Coordinadora)</a>
+    </div>
 
 </body>
 </html>
