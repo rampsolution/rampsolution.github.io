@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ramp Solutions impulsa el crecimiento de su empresa con soluciones integrales, seguridad electrónica y estrategias de desarrollo comercial.">
+    <meta name="description" content="Ramp Solutions impulsa el crecimiento de su empresa con soluciones integrales, seguridad electrónica y estrategias de desarrollo comercial en Centroamérica.">
     <title>Ramp Solutions | Soluciones Integrales</title>
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230A192F%22/><text x=%2250%22 y=%2254%22 font-family=%22sans-serif%22 font-size=%2260%22 fill=%22%2300B4D8%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-weight=%22bold%22>R</text></svg>">
@@ -70,6 +70,10 @@
         .card:hover i { transform: scale(1.1); }
         .card h3 { font-size: 1.4rem; color: var(--primary); margin-bottom: 15px; }
 
+        /* Estilos Tarjetas Directiva */
+        .director-card { flex: 1; min-width: 300px; max-width: 500px; background: var(--bg-light); padding: 40px; border-radius: 10px; border-top: 4px solid var(--secondary); text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+        .director-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 180, 216, 0.1); }
+
         .contact { padding: 100px 5%; display: flex; flex-wrap: wrap; gap: 50px; justify-content: center; }
         .contact-info { flex: 1; min-width: 300px; max-width: 500px; }
         .info-item { display: flex; align-items: center; margin-bottom: 15px; }
@@ -79,7 +83,7 @@
         .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid var(--text-light); border-radius: 5px; background: var(--white); color: var(--text-dark); font-size: 16px; outline: none; transition: all 0.3s ease; }
         .contact-form textarea { height: 150px; resize: none; }
         
-        /* Efecto Focus (Iluminación al escribir) */
+        /* Efecto Focus Formularios */
         .contact-form input:focus, .contact-form textarea:focus { border-color: var(--secondary); box-shadow: 0 0 10px rgba(0, 180, 216, 0.3); }
         
         .btn-submit { width: 100%; background: var(--secondary); color: #0A192F; padding: 15px; border: none; font-size: 18px; font-weight: 700; border-radius: 5px; cursor: pointer; transition: background 0.3s ease; }
@@ -96,7 +100,6 @@
         .bot-option { display: block; background: #25D366; color: white; text-decoration: none; padding: 12px; border-radius: 8px; margin-top: 10px; text-align: center; font-weight: 600; font-size: 0.95rem; transition: background 0.3s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .bot-option:hover { background: #1ebe57; }
 
-        /* Ajustes de Footer con Enlaces */
         footer { background-color: #0A192F; color: #FFF; text-align: center; padding: 40px 20px; border-top: 5px solid var(--secondary); }
         .footer-links { font-size: 0.85rem; margin-top: 15px; color: #8D99AE; }
         .footer-links a { color: #8D99AE; text-decoration: none; transition: color 0.3s ease; }
@@ -128,6 +131,27 @@
         <span class="section-subtitle t-about-sub">Nuestra Visión</span>
         <h2 class="section-title t-about-title">Aliados estratégicos para su expansión</h2>
         <p class="t-about-text">En Ramp Solutions proyectamos una imagen sólida y moderna. Somos el puente que su empresa necesita para dominar el mercado centroamericano.</p>
+    </section>
+
+    <section style="padding: 50px 5% 100px 5%; text-align: center;">
+        <span class="section-subtitle t-lead-sub" style="margin-bottom: 15px;">Liderazgo Estratégico</span>
+        <h2 class="section-title t-lead-title" style="margin-bottom: 50px;">Nuestra Directiva</h2>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+            <div class="director-card">
+                <i class="fa-solid fa-user-tie" style="font-size: 35px; color: var(--secondary); margin-bottom: 15px;"></i>
+                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 5px;">Don Alex M.M.</h3>
+                <p class="t-role-1" style="color: var(--secondary); font-weight: 600; margin-bottom: 15px;">Representante comercial</p>
+                <p class="t-alex-desc" style="color: var(--text-dark); font-size: 0.95rem;">Con más de 15 años de trayectoria en el desarrollo de negocios corporativos, lidera la expansión y el posicionamiento de marcas de alto nivel. Su visión estratégica es el motor que conecta a nuestros socios con las oportunidades más lucrativas del mercado, estableciendo a Costa Rica y Nicaragua como los pilares para una expansión en toda Centroamérica.</p>
+            </div>
+            
+            <div class="director-card">
+                <i class="fa-solid fa-user-tie" style="font-size: 35px; color: var(--secondary); margin-bottom: 15px;"></i>
+                <h3 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 5px;">Doña Marjorie R.P.</h3>
+                <p class="t-role-2" style="color: var(--secondary); font-weight: 600; margin-bottom: 15px;">Coordinadora comercial</p>
+                <p class="t-majo-desc" style="color: var(--text-dark); font-size: 0.95rem;">Especialista con más de 15 años de experiencia en la estructuración comercial y logística. Su capacidad para optimizar recursos y dirigir redes de distribución garantiza que cada estrategia de entrada al mercado se ejecute con precisión milimétrica, asegurando la rentabilidad y el soporte local continuo.</p>
+            </div>
+        </div>
     </section>
 
     <section id="servicios" class="services">
@@ -220,7 +244,13 @@
             "t-hero-sub": { es: "Impulsamos el crecimiento de su empresa con soluciones integrales y estrategias de mercado altamente escalables.", en: "We drive your company's growth with comprehensive solutions and highly scalable market strategies." },
             "t-hero-btn": { es: "Descubra cómo", en: "Discover how" },
             "t-about-sub": { es: "Nuestra Visión", en: "Our Vision" }, "t-about-title": { es: "Aliados estratégicos para su expansión", en: "Strategic allies for your expansion" },
-            "t-about-text": { es: "En Ramp Solutions proyectamos una imagen sólida y moderna. Somos el puente que su empresa necesita para dominar el mercado centroamericano.", en: "At Ramp Solutions, we project a solid and modern image. We are the bridge your company needs to dominate the Central American market." },
+            
+            /* Nuevos textos de Liderazgo */
+            "t-lead-sub": { es: "Liderazgo Estratégico", en: "Strategic Leadership" },
+            "t-lead-title": { es: "Nuestra Directiva", en: "Our Board of Directors" },
+            "t-alex-desc": { es: "Con más de 15 años de trayectoria en el desarrollo de negocios corporativos, lidera la expansión y el posicionamiento de marcas de alto nivel. Su visión estratégica es el motor que conecta a nuestros socios con las oportunidades más lucrativas del mercado, estableciendo a Costa Rica y Nicaragua como los pilares para una expansión en toda Centroamérica.", en: "With over 15 years of experience in corporate business development, he leads the expansion and positioning of high-level brands. His strategic vision connects our partners with the most lucrative market opportunities, establishing Costa Rica and Nicaragua as pillars for Central American expansion." },
+            "t-majo-desc": { es: "Especialista con más de 15 años de experiencia en la estructuración comercial y logística. Su capacidad para optimizar recursos y dirigir redes de distribución garantiza que cada estrategia de entrada al mercado se ejecute con precisión milimétrica, asegurando la rentabilidad y el soporte local continuo.", en: "Specialist with over 15 years of experience in commercial and logistical structuring. Her ability to optimize resources and manage distribution networks ensures that every market entry strategy is executed with precision, ensuring profitability and continuous local support." },
+            
             "t-serv-sub": { es: "Especialidades", en: "Specialties" }, "t-serv-title": { es: "Nuestras Áreas de Negocio", en: "Our Business Areas" },
             "t-s1-title": { es: "Seguridad Electrónica", en: "Electronic Security" }, "t-s1-text": { es: "Sistemas de control de acceso y seguridad electrónica de última generación.", en: "State-of-the-art access control and electronic security systems." },
             "t-s2-title": { es: "Desarrollo Comercial", en: "Commercial Development" }, "t-s2-text": { es: "Métricas precisas para la captación y fidelización de clientes potenciales.", en: "Precise metrics for attracting and retaining potential clients." },
