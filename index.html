@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ramp Solutions impulsa el crecimiento de su empresa con soluciones integrales, seguridad electrónica y estrategias de desarrollo comercial.">
     <title>Ramp Solutions | Soluciones Integrales</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230A192F%22/><text x=%2250%22 y=%2254%22 font-family=%22sans-serif%22 font-size=%2260%22 fill=%22%2300B4D8%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-weight=%22bold%22>R</text></svg>">
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -73,8 +76,12 @@
         .info-item i { font-size: 20px; color: var(--secondary); margin-right: 15px; background: var(--bg-light); padding: 12px; border-radius: 50%; }
         
         .contact-form { flex: 1; min-width: 300px; max-width: 600px; background: var(--bg-light); padding: 40px; border-radius: 10px; border: 1px solid var(--card-border); }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid var(--text-light); border-radius: 5px; background: var(--white); color: var(--text-dark); font-size: 16px; outline: none; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid var(--text-light); border-radius: 5px; background: var(--white); color: var(--text-dark); font-size: 16px; outline: none; transition: all 0.3s ease; }
         .contact-form textarea { height: 150px; resize: none; }
+        
+        /* Efecto Focus (Iluminación al escribir) */
+        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--secondary); box-shadow: 0 0 10px rgba(0, 180, 216, 0.3); }
+        
         .btn-submit { width: 100%; background: var(--secondary); color: #0A192F; padding: 15px; border: none; font-size: 18px; font-weight: 700; border-radius: 5px; cursor: pointer; transition: background 0.3s ease; }
         
         .bot-btn { position: fixed; bottom: 30px; right: 30px; background-color: var(--secondary); color: var(--primary); border: none; border-radius: 50%; width: 65px; height: 65px; display: flex; justify-content: center; align-items: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; cursor: pointer; transition: transform 0.3s ease; }
@@ -89,7 +96,12 @@
         .bot-option { display: block; background: #25D366; color: white; text-decoration: none; padding: 12px; border-radius: 8px; margin-top: 10px; text-align: center; font-weight: 600; font-size: 0.95rem; transition: background 0.3s ease; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .bot-option:hover { background: #1ebe57; }
 
-        footer { background-color: #0A192F; color: #FFF; text-align: center; padding: 30px 20px; border-top: 5px solid var(--secondary); }
+        /* Ajustes de Footer con Enlaces */
+        footer { background-color: #0A192F; color: #FFF; text-align: center; padding: 40px 20px; border-top: 5px solid var(--secondary); }
+        .footer-links { font-size: 0.85rem; margin-top: 15px; color: #8D99AE; }
+        .footer-links a { color: #8D99AE; text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--secondary); }
+
         @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2.5rem; } .bot-window { width: 90%; right: 5%; bottom: 100px; } }
     </style>
 </head>
@@ -161,7 +173,6 @@
                 <textarea name="Mensaje" placeholder="Mensaje / Message..." required></textarea>
                 
                 <input type="hidden" name="_cc" value="majo.rampe27@gmail.com">
-                <!-- Redirección directa al inicio -->
                 <input type="hidden" name="_next" value="https://rampsolution.github.io/">
                 <input type="hidden" name="_captcha" value="false">
 
@@ -190,7 +201,12 @@
         </div>
     </div>
 
-    <footer><p>&copy; 2026 Ramp Solutions. Todos los derechos reservados.</p></footer>
+    <footer>
+        <p>&copy; 2026 Ramp Solutions. Todos los derechos reservados.</p>
+        <p class="footer-links">
+            <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a>
+        </p>
+    </footer>
 
     <script>
         function toggleBot() {
